@@ -65,3 +65,73 @@ function HomePage({ user, onLogout }) {
 }
 
 export default HomePage;
+
+
+
+/* Hard code book Display Test
+
+import React from 'react';
+import './HomePage.css';
+
+const booksToDisplay = [
+    {
+      "author": "Chinua Achebe",
+      "country": "Nigeria",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart",
+      "pages": 209,
+      "title": "Things Fall Apart",
+      "year": 1958
+    },
+    {
+      "author": "Hans Christian Andersen",
+      "country": "Denmark",
+      "language": "Danish",
+      "link": "https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.",
+      "pages": 784,
+      "title": "Fairy tales",
+      "year": 1836
+    }
+  ];
+
+
+
+
+function HomePage({ user, onLogout }) {
+    const handleLogout = async () => {
+      try {
+        await onLogout();
+      } catch (err) {
+        console.error('Logout failed:', err.message);
+      }
+    };
+    
+    return (
+      <div className="home-page">
+        <h3>Logged in with email: {user.profile.email}</h3>
+        <h2>Home Page</h2>
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+        <p>Welcome! You are logged in.</p>
+        {booksToDisplay.map((book) => (
+          <div key={book.title} className="book-card">
+            <div className="book-content">
+              <div className="book-title">
+                <h5>{book.title}</h5>
+                <h6>{book.author}</h6>
+                <p className="book-language">{book.language}</p>
+              </div>
+              <div className="book-details">
+                <p>{book.country}</p>
+                <p>Year: {book.year}</p>
+                <p>Pages: {book.pages}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  
+  export default HomePage;
+
+  */

@@ -50,6 +50,7 @@ class FluidInput extends React.Component {
   }
 }
 
+//Logout button
 class Button extends React.Component {
   render() {
     return (
@@ -66,7 +67,7 @@ class LoginPage extends React.Component {
     this.state = {
       email: '',
       password: '',
-      errorMessage: '' // Add error message state
+      errorMessage: '' //doesn't show until error occurs
     };
   }
 
@@ -78,8 +79,8 @@ class LoginPage extends React.Component {
     try {
       const user = await client.logIn(credential);
       localStorage.setItem('token', user.id);
-      this.setState({ errorMessage: '' }); // Clear any previous error message
-      onLogin(user); // Pass the user object to the onLogin callback
+      this.setState({ errorMessage: '' }); 
+      onLogin(user); 
     } catch (err) {
       console.error('Login failed:', err.message);
       this.setState({ errorMessage: 'Login failed. Please check your email and password and try again.' });
@@ -90,6 +91,8 @@ class LoginPage extends React.Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
+
+  //rendering Stuff
   render() {
     const { email, password, errorMessage } = this.state;
     const style = { margin: "15px 0" };
