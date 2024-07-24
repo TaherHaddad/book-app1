@@ -1,0 +1,56 @@
+.home-page {
+    padding: 20px;
+  }
+  
+  .book-card {
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #eeebe3;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  .logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff4949;
+  }
+  
+  .book-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .book-title h5 {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .book-title h6 {
+    margin: 0;
+  }
+  
+  .book-language {
+    color: grey;
+    text-align: left;
+  }
+  
+  .book-details {
+    text-align: right;
+    color: grey;
+  }
+  
+  .book-details p {
+    margin: 4px 0;
+  }
+  
