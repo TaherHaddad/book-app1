@@ -11,12 +11,19 @@ function HomePage({ user, onLogout }) {
     const fetchBooks = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/fetchBooks'); 
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setBooks(data);
+        //const response = await fetch('/api/fetchBooks'); 
+        //get it to work this this code under to retrieve book
+        //app.currentUser.functions.fetchBooks
+      
+        //const response = await user.functions.fetchBooks();  //this one is wrong but works too
+
+        const response = await user.callFunction('fetchBooks');  //Use This one
+
+      //if (!response.ok) {
+      //  throw new Error('Network response was not ok');
+      //}
+        //const data = await response.json();
+        setBooks(response);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -68,8 +75,7 @@ export default HomePage;
 
 
 
-/* Hard code book Display Test
-
+/*
 import React from 'react';
 import './HomePage.css';
 
@@ -134,4 +140,4 @@ function HomePage({ user, onLogout }) {
   
   export default HomePage;
 
-  */
+*/
